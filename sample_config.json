@@ -1,0 +1,21 @@
+{
+    // Remember to remove the comments after you copy and paste this into your config.json file!
+    "subreddit": "GunAccessoriesForSale", // the subreddit to stream from
+    "keywords": [ // keywords to highlight in the submission title or body
+        "surefire",
+        "aimpoint",
+        "scalarworks",
+        "atlas",
+        "p-mag"
+    ],
+    "beep_all_posts": true, // true or false - whether or not to beep when a new submission is found
+    "beep": {
+        "enabled": true, // true or false - whether or not to beep when a new submission is found
+        "frequency": 1440, // frequency of the beep in Hz
+        "duration": 100 // duration of the beep in milliseconds
+    },
+    "color_flairs": true, // true or false - whether or not to color flair text (for trading subreddits)
+    "logging_level": "INFO", // INFO, DEBUG, ERROR, etc. - what level of logging to use
+    "skip_existing": true, // true or false - whether or not to skip existing submissions
+    "title_filter": "WTS" // a string to filter the title of the submission (leave blank for no filter) (useful for filtering out selling/buying posts based on preferences)
+}
