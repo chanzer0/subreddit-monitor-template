@@ -1,6 +1,6 @@
 {
     // Remember to remove the comments after you copy and paste this into your config.json file!
-    "subreddit": "UsenetInvites", // the subreddit to stream from
+    "subreddits": ["UsenetInvites", "Usenet"], // a list of subreddits to stream from - you can use 1 or more
     "keywords": [ // keywords to highlight in the submission title or body
         "[O]",
         "drunken slug",

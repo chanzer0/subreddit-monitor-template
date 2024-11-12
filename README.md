@@ -1,6 +1,6 @@
 # Subreddit Monitor
 
-A terminal-based python script that allows you to monitor a subreddit for new posts containing specific keywords. Runs off of your own Reddit account and reddit-hosted developer application (see setup instructions below for more information).
+A terminal-based python script that allows you to monitor a subreddit (or multiple subreddits) for new posts containing specific keywords. Runs off of your own Reddit account and reddit-hosted developer application (see setup instructions below for more information).
 
 ![Example usage image](example_usage.png)
 
@@ -90,7 +90,7 @@ The `config.json` file contains configuration settings for the application.
 
    ```json
    {
-     "subreddit": "YourTargetSubreddit", // Do not include the r/ prefix
+     "subreddits": ["YourTargetSubreddit1", "YourTargetSubreddit2"], // Do not include the r/ prefix, you can use 1 or more
      "keywords": ["keyword1", "keyword2"], // A list of keywords you want highlighted in the post title or body
      "beep_all_posts": true, // true or false - whether or not to beep when a new submission is found
      "beep": {

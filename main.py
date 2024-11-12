@@ -5,7 +5,7 @@ import random
 import datetime
 import logging
 import json
-from typing import Optional
+from typing import Optional, List
 
 from dotenv import load_dotenv  # Add this import
 
@@ -56,20 +56,26 @@ def main():
     """Main entry point of the application."""
     try:
         reddit = get_initial_token()
-        subreddit = reddit.subreddit(config["subreddit"])
-        logging.info(f"Started streaming submissions from r/{config['subreddit']}.")
+        subreddits = config["subreddits"]  # Expecting a list of subreddit names
+        subreddit_string = "+".join(subreddits)
+        subreddit = reddit.subreddit(subreddit_string)
+        logging.info(
+            f"Started streaming submissions from: {', '.join(['r/' + sub for sub in subreddits])}."
+        )
 
         for submission in subreddit.stream.submissions(
             skip_existing=config["skip_existing"]
         ):
             title_filter = config["title_filter"].lower()
-            if not title_filter or (
-                title_filter and title_filter in submission.title.lower()
+            if len(title_filter) == 0 or (
+                len(title_filter) > 0 and title_filter in submission.title.lower()
             ):
                 timestamp = datetime.datetime.fromtimestamp(
                     submission.created_utc
                 ).strftime("%I:%M %p")
-                console.print(f"[bold green]{timestamp}[/bold green]")
+                console.print(
+                    f"[bold blue]r/{submission.subreddit.display_name}[/bold blue] [bold green]({timestamp})[/bold green]"
+                )
                 display_submission(submission)
     except Exception as e:
         logging.error(f"An error occurred in main: {e}", exc_info=True)
