@@ -84,7 +84,7 @@ The `.env` file stores your environment variables securely.
 The `config.json` file contains configuration settings for the application.
 
 1. **Create a `config.json` File:**
-   In the root directory of this repository, copy and paste the `sample_config.json` file into a new file, that you should rename to `config.json`. Follow the instructions below to adjust the settings as needed.
+   In the root directory of this repository, copy and paste the `sample_config.json` file into a new file, that you should rename to `config.json`. Follow the instructions below to adjust the settings as needed. Do not forget to remove the `//` comments from the JSON file.
 
 2. **Add Configuration Settings:**
 
