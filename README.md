@@ -1,4 +1,4 @@
-# Reddit App
+# Subreddit Monitor
 
 A terminal-based python script that allows you to monitor a subreddit for new posts containing specific keywords. Runs off of your own Reddit account and reddit-hosted developer application (see setup instructions below for more information).
 
